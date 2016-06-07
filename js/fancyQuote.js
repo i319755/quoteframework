@@ -1,10 +1,9 @@
-
+//onload event 
 document.addEventListener("DOMContentLoaded", function(event) {
 	
 	//get the quote div
 	var x = document.getElementById("quote");
-	
-	//funtion for creation of the random quote
+	//funtion for creation of the random quote based on the total quotes
 	function randomQuote(){
 		 
 		totalQuoteLines = x.getElementsByTagName("p").length;
@@ -13,16 +12,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	}
 	randomQuote();
 	
-	//function for appending the code to the quote div
+	//function for appending the choosen quote to the quote div
 	function appendQuote(){	
 		document.getElementById("quote").innerHTML = '<p class="singleQuote">' + randomQuote + '</p>';
 	}
 	appendQuote();	
 });
 
+//function for options
 var quoteFramework = quoteFramework || (function(){
     var properties = {}; 
  
+ //adding the options
 	return {
         options : function(options) {
             properties = options;
