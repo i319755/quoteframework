@@ -15,23 +15,25 @@ To include fancyQuote into your HMTL file paste this code anywhere you would lik
 </div>
 
 ## Properties
+
 The easeist way to change the properties of FancyQuote is using the property script in your HTML file.
 You can edit the div from FancyQuote in many ways. Also the fontSize, Color, fontFamily and textAlign can be modified.
 
 Paste this script into your HTML file.
-//script to run the options of fancyQuote
+<!--script to run the options of fancyQuote-->
 <script type="text/javascript">
    quoteFramework.options([/*fontsize*/"25px", /*Color*/"white",/*fontFamily*/ "Source Sans Pro",/*textAlign*/"center",/*div color*/"#000000",/*padding*/"45px"]);
 </script>
 
 
 ## Demo
+
 Open the demo files from the download make sure u run them on a localhost.
 There is also a example file to check an example where fancyQuote is included into a website.
 
 ## Motivation
 
-This library was created as a small example on how you can create a library.
+This library was created as an example on how to create a library.
 
 ## Installation
 
