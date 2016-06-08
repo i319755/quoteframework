@@ -1,4 +1,41 @@
+body{
+	margin: 0;
+}
+
+h1{
+	font-family: verdana;
+	font-size: 14px;
+}
+
+.intro{
+	width: 100%;
+	height: 300px;
+	background-color: grey;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.intro p {
+	margin: auto;
+}
+
+.randomSection{
+	width: 100%;
+	height: 400px;
+	background-color: grey;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+#quote p{
+	margin:0;
+}
+
 #quote-lines{
 	display: none;
-	
 }

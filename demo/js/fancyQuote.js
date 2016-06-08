@@ -22,21 +22,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 //function for options
 var quoteFramework = quoteFramework || (function(){
     var properties = {}; 
-
- //adding the options
  
+ //adding the options
 	return {
         options : function(options) {
             properties = options;
        		document.addEventListener("DOMContentLoaded", function(event) {
-				document.querySelector(".singleQuote").style.fontSize = properties[0];
+				document.querySelector(".singleQuote").style.fontSize =  properties[0];
 				document.querySelector(".singleQuote").style.color = properties[1];
 				document.querySelector(".singleQuote").style.fontFamily = properties[2];
 				document.querySelector(".singleQuote").style.textAlign = properties[3];
 				document.querySelector("#quote").style.backgroundColor = properties[4];
-				document.querySelector("#quote").style.padding = properties[5];
-			
+				document.querySelector("#quote").style.padding = properties[5];	
 			});
        }
-    };	
+    };
 }());
+
