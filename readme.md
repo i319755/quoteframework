@@ -20,8 +20,8 @@ To include fancyQuote into your HMTL file paste this code anywhere you would lik
 The easeist way to change the properties of FancyQuote is using the property script in your HTML file.
 You can edit the div from FancyQuote in many ways. Also the fontSize, Color, fontFamily and textAlign can be modified.
 
-```Javascript
 Paste this script into your HTML file.
+```Javascript
 <!--script to run the options of fancyQuote-->
 <script type="text/javascript">
    quoteFramework.options([/*fontsize*/"25px", /*Color*/"white",/*fontFamily*/ "Source Sans Pro",/*textAlign*/"center",/*div color*/"#000000",/*padding*/"45px"]);
