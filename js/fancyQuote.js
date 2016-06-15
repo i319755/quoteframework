@@ -1,5 +1,5 @@
 var quoteFramework = function quoteFramework(style){
-    
+	
 	//onload event 
 	document.addEventListener("DOMContentLoaded", function(event) {
 		
@@ -7,44 +7,43 @@ var quoteFramework = function quoteFramework(style){
 		var x = document.getElementById("quote");
 		
 		//funtion for creation of the random quote based on the total quotes
-		function randomQuote(){
-			 
+		function randomQuote(){		 
 			totalQuoteLines = x.getElementsByTagName("p").length;
 			random = Math.floor((Math.random() * totalQuoteLines));
 			randomQuote = x.children[random].innerHTML;
 		}
 		randomQuote();
 		
-		//function for appending the choosen quote to the quote div
+		//function for appending the chosen quote to the quote div
 		function appendQuote(){	
 			document.getElementById("quote").innerHTML = '<p class="singleQuote">' + randomQuote + '</p>';
 		}
 		appendQuote();	
 	});
 	
-	//Array default options	
-	var properties = {
+	//Object for default options	
+	properties = {
 		fontSize: '25px',
 		color: 'white', 
-		textAlign: 'left',
+		textAlign: 'center',
 		fontFamily: 'Source Sans Pro',
 		backgroundColor: 'black',
 		padding: '45px'
 	}
 	
-	console.log(style);
-	console.log(properties);
-	//Merge the default settings with the style from the user 
-	function mergeObjects(obj, src) {
-		Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
-		return obj;
+	if (style != null){
+		//Merge function for the default style and the custom style from the user
+		function mergeObjects(obj, src) {
+			Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
+			return obj;		
+		}
+
+		//Merge the default settings with the style from the user 
+		properties = mergeObjects(properties, style);
 	}
+		
 	
-	properties = mergeObjects(properties, style);
-
-	//console.log(properties['fontSize']);
-	console.log(properties);
-
+	//Add the style to the quote
 	document.addEventListener("DOMContentLoaded", function(event) {
 		document.querySelector(".singleQuote").style.fontSize = properties.fontSize;
 		document.querySelector(".singleQuote").style.color = properties.color;
