@@ -31,8 +31,7 @@ after you pasted the HTML use this little script to run the library
 ```
 
 ## Properties
-
-The easeist way to change the style of FancyQuote is using the parameter style in your HTML file. Also make a var style wich can contain alot of options.
+If you feel like changing the looks of FancyQuote, than the easeist way to change the style of FancyQuote is using the parameter style in your HTML file. Also make a var style wich can contain alot of options.
 
 Paste this script into your HTML file.
 ```Javascript
@@ -57,15 +56,11 @@ You can edit FancyQuote in many ways check this table
 | padding        | string        | true     | changes size of the quote div |
 
 
-## Motivation
-
-This library was created as an example on how to create a library.
-
 ## Installation
 
 For a installation without styling:
-Download the library (zip), and call the js and css files from the demo in the head of your HTML file.
+Download the library (zip), and call the js and css files in the head of your HTML file.
 Afterwards paste the HTML code from the demo.html into your own html file, whereever you like to include FancyQuote.
-For any tip go to ## Code Example for a description. 
+For any advice go to ## Code Example for a description. 
 
 
