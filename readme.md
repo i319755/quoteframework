@@ -39,7 +39,7 @@ Paste this script into your HTML file.
 <script type="text/javascript">
      var style = {
 		textAlign: 'left',
-		color: 'red',
+		color: 'red'
 	}
    quoteFramework(style);
 </script>
