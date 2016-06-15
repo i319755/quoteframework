@@ -1,42 +1,57 @@
-//onload event 
-document.addEventListener("DOMContentLoaded", function(event) {
+var quoteFramework = function quoteFramework(style){
+    
+	//onload event 
+	document.addEventListener("DOMContentLoaded", function(event) {
+		
+		//get the quote div
+		var x = document.getElementById("quote");
+		
+		//funtion for creation of the random quote based on the total quotes
+		function randomQuote(){
+			 
+			totalQuoteLines = x.getElementsByTagName("p").length;
+			random = Math.floor((Math.random() * totalQuoteLines));
+			randomQuote = x.children[random].innerHTML;
+		}
+		randomQuote();
+		
+		//function for appending the choosen quote to the quote div
+		function appendQuote(){	
+			document.getElementById("quote").innerHTML = '<p class="singleQuote">' + randomQuote + '</p>';
+		}
+		appendQuote();	
+	});
 	
-	//get the quote div
-	var x = document.getElementById("quote");
-	//funtion for creation of the random quote based on the total quotes
-	function randomQuote(){
-		 
-		totalQuoteLines = x.getElementsByTagName("p").length;
-		random = Math.floor((Math.random() * totalQuoteLines));
-		randomQuote = x.children[random].innerHTML;
+	//Array default options	
+	var properties = {
+		fontSize: '25px',
+		color: 'white', 
+		textAlign: 'left',
+		fontFamily: 'Source Sans Pro',
+		backgroundColor: 'black',
+		padding: '45px'
 	}
-	randomQuote();
 	
-	//function for appending the choosen quote to the quote div
-	function appendQuote(){	
-		document.getElementById("quote").innerHTML = '<p class="singleQuote">' + randomQuote + '</p>';
+	console.log(style);
+	console.log(properties);
+	//Merge the default settings with the style from the user 
+	function mergeObjects(obj, src) {
+		Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
+		return obj;
 	}
-	appendQuote();	
-});
+	
+	properties = mergeObjects(properties, style);
 
-//function for options
-var quoteFramework = quoteFramework || (function(){
-    var properties = {}; 
+	//console.log(properties['fontSize']);
+	console.log(properties);
 
- //adding the options
- 
-	return {
-        options : function(options) {
-            properties = options;
-       		document.addEventListener("DOMContentLoaded", function(event) {
-				document.querySelector(".singleQuote").style.fontSize = properties[0];
-				document.querySelector(".singleQuote").style.color = properties[1];
-				document.querySelector(".singleQuote").style.fontFamily = properties[2];
-				document.querySelector(".singleQuote").style.textAlign = properties[3];
-				document.querySelector("#quote").style.backgroundColor = properties[4];
-				document.querySelector("#quote").style.padding = properties[5];
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.querySelector(".singleQuote").style.fontSize = properties.fontSize;
+		document.querySelector(".singleQuote").style.color = properties.color;
+		document.querySelector(".singleQuote").style.fontFamily = properties.fontFamily;
+		document.querySelector(".singleQuote").style.textAlign = properties.textAlign;
+		document.querySelector("#quote").style.backgroundColor = properties.backgroundColor;
+		document.querySelector("#quote").style.padding = properties.padding;
 			
-			});
-       }
-    };	
-}());
+	});
+};
